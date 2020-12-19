@@ -13,3 +13,6 @@ class Worker(Person):
         super().__init__(name, age)
         self.department = department
         self.position = position
+    
+    def presentation(self):
+        print(f"Hola! Soy {self.name} y tengo {self.age} años. Estoy en el puesto {self.position} del departamento {self.department}.")
