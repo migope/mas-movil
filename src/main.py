@@ -10,3 +10,7 @@ if __name__ == '__main__':
 
     worker_1 = Worker('Miguel', 26, 'Big Data', 'Data Engineeging')
     worker_1.presentation()
+
+    my_var_list = [ "Andrea", 42, "Ventas", "Manager"]
+    worker_2 = Worker(*my_var_list)
+    worker_2.presentation()
