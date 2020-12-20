@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
 from datetime import datetime, timedelta
+
 from airflow import DAG
+from airflow.operators.dummy_operator import DummyOperator
 
 
 default_args = {
@@ -14,3 +17,8 @@ dag = DAG(
     default_args=default_args,
     schedule_interval='0 3 * * *'
 )
+
+start = DummyOperator(task_id='start', dag=dag)
+end = DummyOperator(task_id='end', dag=dag)
+
+start >> end
